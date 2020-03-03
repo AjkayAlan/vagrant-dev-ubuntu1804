@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Install dependencies
 sudo apt install -y software-properties-common

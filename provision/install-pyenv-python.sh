@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Install dependencies for pyenv
 sudo apt install -y \

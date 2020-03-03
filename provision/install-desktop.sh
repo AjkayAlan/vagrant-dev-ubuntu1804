@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Set default ubuntu user
 echo "ubuntu:ubuntu" | sudo chpasswd

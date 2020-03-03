@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Install sdkman
 curl -s "https://get.sdkman.io" | zsh

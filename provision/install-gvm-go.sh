@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Install needed dependencies
 sudo apt install -y \
