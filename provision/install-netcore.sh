@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Install .NET Core and make it available
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
