@@ -1,5 +1,4 @@
 #!/bin/sh
-set -ex
 
 # Install zsh
 sudo apt install -y zsh

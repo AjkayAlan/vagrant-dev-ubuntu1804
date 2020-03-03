@@ -1,5 +1,4 @@
 #!/bin/sh
-set -ex
 
 # Update sources and upgrade base box
 sudo apt update

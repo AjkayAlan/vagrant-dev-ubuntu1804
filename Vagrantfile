@@ -23,7 +23,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision 'shell', privileged: false, path: 'provision/update-box.sh', name: 'update-box.sh'
   config.vm.provision :reload
   config.vm.provision 'shell', privileged: false, path: 'provision/install-desktop.sh', name: 'install-desktop.sh'
-  config.vm.provision :reload
   config.vm.provision 'shell', privileged: false, path: 'provision/install-basics.sh', name: 'install-basics.sh'
   config.vm.provision 'shell', privileged: false, path: 'provision/install-chromium.sh', name: 'install-chromium.sh'
   config.vm.provision 'shell', privileged: false, path: 'provision/install-git.sh', name: 'install-git.sh'

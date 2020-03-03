@@ -1,5 +1,4 @@
 #!/bin/sh
-set -ex
 
 # Install basic nice to have things
 sudo apt install -y \

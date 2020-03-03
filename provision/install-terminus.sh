@@ -1,5 +1,4 @@
 #!/bin/sh
-set -ex
 
 # Install terminus
 wget https://github.com/Eugeny/terminus/releases/download/v1.0.104/terminus-1.0.104-linux.deb

@@ -1,5 +1,4 @@
 #!/bin/sh
-set -ex
 
 # Install needed dependencies
 sudo apt install -y \

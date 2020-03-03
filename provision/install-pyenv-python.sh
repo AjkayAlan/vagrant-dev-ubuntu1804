@@ -1,5 +1,4 @@
 #!/bin/sh
-set -ex
 
 # Install dependencies for pyenv
 sudo apt install -y \

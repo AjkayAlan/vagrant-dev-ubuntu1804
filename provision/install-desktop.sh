@@ -1,5 +1,4 @@
 #!/bin/sh
-set -ex
 
 # Set default ubuntu user
 echo "ubuntu:ubuntu" | sudo chpasswd

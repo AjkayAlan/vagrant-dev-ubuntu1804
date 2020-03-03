@@ -1,5 +1,4 @@
 #!/bin/sh
-set -ex
 
 # Install dependencies
 sudo apt install -y software-properties-common
