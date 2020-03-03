@@ -1,12 +1,12 @@
 # Vagrant-Dev-Ubuntu1804
 
-A vagrant setup for a normal developer machine using VirtualBox with Ubuntu 18.04 LTS
+A vagrant setup for a normal developer machine using Hyper-V with Ubuntu 18.04 LTS
 
 ## Computer Setup
 
-1. Install VirtualBox (via Chocolatey):
+1. Install Hyper-V (by running the following in an admin PowerShell session):
 ```
-choco install virtualbox
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 ```
 
 2. Install Vagrant (via Chocolatey):
@@ -19,6 +19,12 @@ choco install vagrant
 vagrant plugin install vagrant-reload
 vagrant plugin install vagrant-disksize
 ```
+
+4. Create a new Virtual Switch in Hyper-V Manager with the following settings:
+    Type: External
+    Name: Vagrant
+    External Network: Select your adapter that has internet
+    Check "Allow management operation system to share this network adapter"
 
 ## Spinning up the environment
 

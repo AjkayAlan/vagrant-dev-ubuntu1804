@@ -1,23 +1,16 @@
 Vagrant.configure("2") do |config|
   config.vagrant.plugins = [
-    "vagrant-reload",
-    "vagrant-disksize"
+    "vagrant-reload"
   ]
 
-  config.vm.box = "ubuntu/bionic64"
-  config.disksize.size = '25GB'
+  config.vm.box = "generic/ubuntu1804"
+  config.vm.network "public_network", bridge: "Vagrant"
 
-  config.vm.provider "virtualbox" do |vb|
-    vb.gui = true
-    vb.name = 'ubuntu-1804-xfce4'
-    vb.memory = 4096
-    vb.cpus = 4
-    vb.customize ['modifyvm', :id, '--vram', '256']
-    vb.customize ['modifyvm', :id, '--accelerate2dvideo', 'on']
-    vb.customize ['modifyvm', :id, '--accelerate3d', 'on']
-    vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
-    vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
-    vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
+  config.vm.provider :hyperv do |hyperv|
+    hyperv.vmname = "ubuntu-1804-xfce4"
+    hyperv.memory = 4096
+    hyperv.maxmemory = 4096
+    hyperv.cpus = 4
   end
 
   config.vm.provision 'shell', privileged: false, path: 'provision/update-box.sh', name: 'update-box.sh'
