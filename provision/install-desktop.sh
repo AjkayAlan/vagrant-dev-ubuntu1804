@@ -3,11 +3,13 @@
 # Set default ubuntu user
 echo "ubuntu:ubuntu" | sudo chpasswd
 
-# Install xfce and virtualbox additions
-sudo apt install -y \
-    xfce4
+# Install tasksel
+sudo apt install -y tasksel
 
-# Install a login screen
-sudo apt install -y \
-    lightdm \
-    lightdm-gtk-greeter
+# Install gnome desktop
+sudo apt-get install -y ubuntu-gnome-desktop
+
+# Enable xrdp
+wget https://raw.githubusercontent.com/Microsoft/linux-vm-tools/master/ubuntu/18.04/install.sh
+sudo chmod +x install.sh
+sudo ./install.sh
