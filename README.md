@@ -21,10 +21,10 @@ vagrant plugin install vagrant-disksize
 ```
 
 4. Create a new Virtual Switch in Hyper-V Manager with the following settings:
-    Type: External
-    Name: Vagrant
-    External Network: Select your adapter that has internet
-    Check "Allow management operation system to share this network adapter"
+    - Type: External
+    - Name: Vagrant
+    - External Network: Select your adapter that has internet
+    - Check "Allow management operation system to share this network adapter"
 
 ## Spinning up the environment
 
