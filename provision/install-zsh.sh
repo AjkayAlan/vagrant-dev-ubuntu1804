@@ -7,8 +7,8 @@ sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Change default shell to zsh
-sudo chsh -s $(which zsh)
-chsh -s $(which zsh)
+sudo chsh -s /bin/zsh vagrant
+zsh
 
 # Install powerlevel10k
 if [ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ] ; then
