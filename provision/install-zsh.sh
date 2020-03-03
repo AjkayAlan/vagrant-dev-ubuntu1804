@@ -11,4 +11,6 @@ sudo chsh -s $(which zsh)
 chsh -s $(which zsh)
 
 # Install powerlevel10k
-sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+if [ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ] ; then
+    sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+fi
