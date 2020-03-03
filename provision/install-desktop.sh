@@ -7,9 +7,4 @@ echo "ubuntu:ubuntu" | sudo chpasswd
 sudo apt install -y tasksel
 
 # Install gnome desktop
-sudo apt-get install -y ubuntu-gnome-desktop
-
-# Enable xrdp
-wget https://raw.githubusercontent.com/Microsoft/linux-vm-tools/master/ubuntu/18.04/install.sh
-sudo chmod +x install.sh
-sudo ./install.sh
+sudo tasksel install ubuntu-desktop

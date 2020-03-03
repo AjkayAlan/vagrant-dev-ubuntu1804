@@ -19,7 +19,6 @@ fc-cache -vf ~/.local/share/fonts/
 if [ ! -d "$ZSH_CUSTOM/themes/powerlevel9k" ] ; then
     git clone https://github.com/bhilburn/powerlevel9k.git $ZSH_CUSTOM/themes/powerlevel9k
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel9k\/powerlevel9k"/g' ~/.zshrc
+    echo "POWERLEVEL9K_MODE='nerdfont-complete'" >> ~/.zshrc
+    source ~/.zshrc
 fi
-
-# Set mode to nerdfont
-
