@@ -14,9 +14,10 @@ choco install virtualbox
 choco install vagrant
 ```
 
-3. Install a plugin to allow reloading between provisioning steps (useful when updating causes a kernel update):
+3. Install some useful plugins:
 ```
 vagrant plugin install vagrant-reload
+vagrant plugin install vagrant-disksize
 ```
 
 ## Spinning up the environment

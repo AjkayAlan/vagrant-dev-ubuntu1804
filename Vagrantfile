@@ -1,7 +1,11 @@
 Vagrant.configure("2") do |config|
-  config.vagrant.plugins = "vagrant-reload"
+  config.vagrant.plugins = [
+    "vagrant-reload",
+    "vagrant-disksize"
+  ]
 
   config.vm.box = "ubuntu/bionic64"
+  config.disksize.size = '25GB'
 
   config.vm.provider "virtualbox" do |vb|
     vb.gui = true
