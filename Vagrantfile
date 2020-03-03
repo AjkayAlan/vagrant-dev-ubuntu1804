@@ -16,6 +16,8 @@ Vagrant.configure("2") do |config|
     vb.customize ['modifyvm', :id, '--accelerate2dvideo', 'on']
     vb.customize ['modifyvm', :id, '--accelerate3d', 'on']
     vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
+    vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
+    vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
   end
 
   config.vm.provision 'shell', privileged: false, path: 'provision/update-box.sh', name: 'update-box.sh'
