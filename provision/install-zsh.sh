@@ -14,3 +14,5 @@ zsh
 if [ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ] ; then
     sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 fi
+sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' ~/.zshrc
+yes q | source ~/.zshrc
