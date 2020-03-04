@@ -42,3 +42,14 @@ This is needed due to us using Hyper-V with enhanced mode. It allows us to open 
 ## Credits
 - Thanks to https://github.com/halvards/vagrant-xfce4-ubuntu for giving me a better idea on how to layout this repo.
 - Thanks to https://github.com/heidemn/vagrant-bionic-desktop for helping get a GUI working well
+
+## TODO's
+
+- VSCode extensions and config
+- Git credentials - Not sure a great way
+- Make everything not internet accessible (i.e. allow outgoing, but not incoming), or double check that is how it currently behaves
+- Other languages?
+- Terminus config
+- Preferences (keyboard shortcuts, etc.)
+- Variablize more items in Vagrantfile w/ provision.ps1, such as RAM, CPU, Name, etc.
+- Other items to install that would be nice? PowerShell Core? R & RStudio?
