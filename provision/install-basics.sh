@@ -7,6 +7,7 @@ sudo apt install -y \
     ca-certificates \
     coreutils \
     curl \
+    fontconfig \
     gzip \
     lsb-release \
     man-db \
