@@ -54,3 +54,4 @@ This is needed due to us using Hyper-V with enhanced mode. It allows us to open 
 - Variablize more items in Vagrantfile w/ provision.ps1, such as RAM, CPU, Name, etc.
 - Other items to install that would be nice? PowerShell Core? R & RStudio?
 - Cleanup of resources when provisioned (i.e. deleting .deb's)
+- Automate switch creation
