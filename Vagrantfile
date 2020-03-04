@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
   config.vm.provider :hyperv do |hyperv|
-    hyperv.vmname = "ubuntu-1804-xfce4"
+    hyperv.vmname = "ubuntu-1804-kde"
     hyperv.memory = 4096
     hyperv.maxmemory = 4096
     hyperv.cpus = 4

@@ -1,4 +1,4 @@
 vagrant up
 vagrant halt
-Set-VM -VMName ubuntu-1804-xfce4 -EnhancedSessionTransportType HvSocket
+Set-VM -VMName ubuntu-1804-kde -EnhancedSessionTransportType HvSocket
 vagrant up
