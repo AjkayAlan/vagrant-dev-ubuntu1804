@@ -3,7 +3,7 @@ Vagrant.configure("2") do |config|
     "vagrant-reload"
   ]
 
-  config.vm.box = "bento/ubuntu-18.04"
+  config.vm.box = "generic/ubuntu1804"
   config.vm.network "public_network", bridge: "Vagrant"
 
   config.vm.provider :hyperv do |hyperv|
@@ -19,7 +19,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision 'shell', privileged: false, path: 'provision/install-zsh.sh', name: 'install-zsh.sh'
   config.vm.provision :reload
   config.vm.provision 'shell', privileged: false, path: 'provision/install-desktop.sh', name: 'install-desktop.sh'
-  config.vm.provision :reload
   config.vm.provision 'shell', privileged: false, path: 'provision/install-xrdp.sh', name: 'install-xrdp.sh'
   config.vm.provision :reload
   config.vm.provision 'shell', privileged: false, path: 'provision/install-chromium.sh', name: 'install-chromium.sh'
