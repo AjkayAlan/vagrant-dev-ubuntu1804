@@ -3,8 +3,9 @@ Vagrant.configure("2") do |config|
     "vagrant-reload"
   ]
 
-  config.vm.box = "generic/ubuntu1804"
+  config.vm.box = "hashicorp/bionic64"
   config.vm.network "public_network", bridge: "Vagrant"
+  config.vm.synced_folder ".", "/vagrant", disabled: true
 
   config.vm.provider :hyperv do |hyperv|
     hyperv.vmname = "ubuntu-1804-xfce4"
