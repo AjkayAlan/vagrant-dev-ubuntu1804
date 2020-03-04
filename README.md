@@ -26,12 +26,18 @@ vagrant plugin install vagrant-disksize
     - External Network: Select your adapter that has internet
     - Check "Allow management operation system to share this network adapter"
 
+## Customize it
+
+Dig into the Vagrantfile to customize how the VM behaves for you. Since I am using this as a base developer environment, my CPU and RAM are set relatively high.
+
 ## Spinning up the environment
 
-Clone the repo, cd to it, and then run the following:
+Clone the repo, cd to it with an admin powershell, and run:
 ```
-vagrant up
+.\provision.ps1
 ```
+
+This is needed due to us using Hyper-V with enhanced mode. It allows us to open the VM via Hyper-V Manager with good graphics and minimal latency.
 
 ## Credits
 - Thanks to https://github.com/halvards/vagrant-xfce4-ubuntu for giving me a better idea on how to layout this repo.
