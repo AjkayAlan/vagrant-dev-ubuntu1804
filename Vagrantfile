@@ -38,4 +38,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision 'shell', privileged: false, path: 'provision/install-intellij.sh', name: 'install-intellij.sh'
   config.vm.provision 'shell', privileged: false, path: 'provision/install-terminus.sh', name: 'install-terminus.sh'
   config.vm.provision 'shell', privileged: false, path: 'provision/set-preferences.sh', name: 'set-preferences.sh'
+  config.vm.provision :reload
 end
