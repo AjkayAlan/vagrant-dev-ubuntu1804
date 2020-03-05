@@ -65,3 +65,4 @@ If you need GUI access, connect to the VM via Hyper-V Manager. If you right-clic
 - Git credentials - Not sure a great way
 - Terminus config
 - Other items to install that would be nice? R & RStudio?
+- Change default password
