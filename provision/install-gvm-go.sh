@@ -17,4 +17,6 @@ source ~/.zshrc
 
 # Install go
 gvm install go1.14 --binary
-gvm use go1.14
+gvm use go1.14 --default
+gvm pkgset create default
+gvm pkgset use default

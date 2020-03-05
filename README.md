@@ -61,7 +61,7 @@ If you need GUI access, connect to the VM via Hyper-V Manager. If you right-clic
 
 ## TODO's
 
-- VSCode extensions and config
+- VSCode config
 - Git credentials - Not sure a great way
 - Terminus config
 - Other items to install that would be nice? R & RStudio?
