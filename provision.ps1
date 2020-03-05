@@ -11,13 +11,16 @@ foreach ($line in $content) {
     if ($line.Trim()) {
         $line = $line.Replace("`"","")
         $kvp = $line -split "=",2
-        if ($PSCmdlet.ShouldProcess("$($kvp[0])", "set value $($kvp[1])")) {
-            [Environment]::SetEnvironmentVariable($kvp[0].Trim(), $kvp[1].Trim(), "Process") | Out-Null
-        }
+        [Environment]::SetEnvironmentVariable($kvp[0].Trim(), $kvp[1].Trim(), "Process") | Out-Null
     }
 }
 
+# Provision the environment
 vagrant up
+
+# Stop, and enable enhanced mode for RDP
 vagrant halt
 Set-VM -VMName $env:VM_NAME -EnhancedSessionTransportType HvSocket
+
+# Bring the environment back up
 vagrant up
