@@ -64,7 +64,7 @@ If you need GUI access, connect to the VM via Hyper-V Manager. If you right-clic
 - VSCode config
 - Git credentials - Not sure a great way
 - Terminus config
-- Other items to install that would be nice? R & RStudio?
+- Other items to install that would be nice? R & RStudio? Beyondcompare, postman?
 - Change default password
 - Get latest version for more packages (if LTS is not an option) instead of pinning versions. Ex: terminus.
 - Set versions of all packages in env config instead of assuming latest/hardcoded version
