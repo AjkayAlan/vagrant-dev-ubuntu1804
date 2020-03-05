@@ -66,3 +66,7 @@ If you need GUI access, connect to the VM via Hyper-V Manager. If you right-clic
 - Terminus config
 - Other items to install that would be nice? R & RStudio?
 - Change default password
+- Get latest version for more packages (if LTS is not an option) instead of pinning versions. Ex: terminus.
+- Set versions of all packages in env config instead of assuming latest/hardcoded version
+- Look into tranforming this into Packer, and use GitHub Actions for validating and building? Current builds are taking awhile
+
