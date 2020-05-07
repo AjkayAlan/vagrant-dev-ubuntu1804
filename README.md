@@ -1,6 +1,6 @@
-# Vagrant-Dev-Ubuntu1804
+# Vagrant-Ubuntu-Dev
 
-A vagrant setup for a normal developer machine using Hyper-V with Ubuntu 18.04 LTS
+A vagrant setup for a normal developer machine using ubuntu
 
 ## Computer Setup
 
