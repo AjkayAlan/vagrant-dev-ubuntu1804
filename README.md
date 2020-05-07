@@ -50,5 +50,31 @@ Then run it:
 vagrant up
 ```
 
+After starting up, install the guest additions:
+1. Navigate to Devices -> Insert Guest Additions CD image
+2. Open Konsole, and run the following commands:
+
+```sh
+sudo apt update
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+sudo mkdir -p /mnt/cdrom
+sudo mount /dev/cdrom /mnt/cdrom
+cd /mnt/cdrom
+sudo sh ./VBoxLinuxAdditions.run
+sudo shutdown -r now
+```
+
+After rebooting, verify the additions are running:
+```sh
+lsmod | grep vboxguest
+```
+
+You should see output like the following:
+```sh
+vboxguest             348160  5 vboxsf
+```
+
+Now you should be able to set resolution and such as you want!
+
 ## TODOs
 * Guest Additions?
