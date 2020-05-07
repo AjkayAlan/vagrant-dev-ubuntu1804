@@ -4,19 +4,10 @@ A vagrant setup for a normal developer machine using Hyper-V with Ubuntu 18.04 L
 
 ## Computer Setup
 
-1. Install Hyper-V (by running the following in an admin PowerShell session):
-```
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-```
-
-2. Install Vagrant (via Chocolatey):
-```
-choco install vagrant
-```
-
-3. Install some useful plugins:
-```
-vagrant plugin install vagrant-reload
+1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+1. Install [Vagrant](https://www.vagrantup.com/downloads.html)
+1. Install vagrant plugins:
+```sh
 vagrant plugin install vagrant-env
 ```
 
@@ -24,49 +15,40 @@ vagrant plugin install vagrant-env
 
 Dig into the .env file to customize how the VM behaves for you. Since I am using this as a base developer environment, my CPU and RAM are set relatively high.
 
-## Spinning up the environment
+Additionally, I am using a local box created from https://github.com/AjkayAlan/packer-vagrant-ubuntu-dev-box. You will need to compile that box yourself and add it to your local vagrant box store via something like:
 
-Clone the repo, cd to it with an admin powershell, and run:
-```
-.\provision.ps1
-```
-
-This is needed due to us using Hyper-V with enhanced mode. It allows us to open the VM via Hyper-V Manager with good graphics and minimal latency.
-
-## Accessing the environment
-
-### SSH
-
-After the environment is provisioned, you can access it two different ways. If you need SSH access only, you can run the following from the directory root:
-```
-vagrant ssh
+```sh
+vagrant box add package.box --force --name ubuntu-dev
 ```
 
-Otherwise, you can grab the IP of the instance by running:
+## Spinning Up The Box
+
+It's super easy to spin the box up! First, add the environment variables to your shell:
+
+Using PowerShell (Windows):
+```PowerShell
+$content = Get-Content ".\.env" -ErrorAction Stop
+Write-Verbose "Parsed .env file"
+
+foreach ($line in $content) {
+    if ($line.StartsWith("#")) { continue };
+    if ($line.Trim()) {
+        $line = $line.Replace("`"","")
+        $kvp = $line -split "=",2
+        [Environment]::SetEnvironmentVariable($kvp[0].Trim(), $kvp[1].Trim(), "Process") | Out-Null
+    }
+}
 ```
-vagrant ssh-config
+
+Using Bash (Linux/MacOS):
+```sh
+for v in `cat .env` ; do export ${v%%=*}=${v##*=} ; done
 ```
 
-From there, you can ssh using your favorite client. Use `vagrant` for both the username and password.
+Then run it:
+```sh
+vagrant up
+```
 
-### GUI
-
-If you need GUI access, connect to the VM via Hyper-V Manager. If you right-click and hit connect, it should open an RDP session and you should get a login screen. Login using xorg for the session type and `vagrant` for both the username and password
-
-## Credits
-
-- Thanks to https://github.com/halvards/vagrant-xfce4-ubuntu for giving me a better idea on how to layout this repo.
-- Thanks to https://github.com/heidemn/vagrant-bionic-desktop for helping get a GUI working well
-- Thanks to https://github.com/microsoft/linux-vm-tools for getting xrdp working well for a nice GUI experience with Hyper-V
-
-## TODO's
-
-- VSCode config
-- Git credentials - Not sure a great way
-- Terminus config
-- Other items to install that would be nice? R & RStudio? Beyondcompare, postman?
-- Change default password
-- Get latest version for more packages (if LTS is not an option) instead of pinning versions. Ex: terminus.
-- Set versions of all packages in env config instead of assuming latest/hardcoded version
-- Look into tranforming this into Packer, and use GitHub Actions for validating and building? Current builds are taking awhile
-
+## TODOs
+* Guest Additions?
