@@ -1,6 +1,6 @@
-# Vagrant-Dev-Ubuntu1804
+# Vagrant-Linux-Dev
 
-A vagrant setup for a normal developer machine using Hyper-V with Ubuntu 18.04 LTS
+A vagrant setup for a normal developer machine using Hyper-V
 
 ## Computer Setup
 
@@ -15,10 +15,10 @@ vagrant plugin install vagrant-env
 
 Dig into the .env file to customize how the VM behaves for you. Since I am using this as a base developer environment, my CPU and RAM are set relatively high.
 
-Additionally, I am using a local box created from https://github.com/AjkayAlan/packer-vagrant-ubuntu-dev-box. You will need to compile that box yourself and add it to your local vagrant box store via something like:
+Additionally, I am using a local box created from https://github.com/AjkayAlan/packer-vagrant-linux-dev-box. You will need to compile that box yourself and add it to your local vagrant box store via something like:
 
 ```sh
-vagrant box add package.box --force --name ubuntu-dev
+vagrant box add package.box --force --name debian-dev
 ```
 
 ## Spinning Up The Box
@@ -49,32 +49,3 @@ Then run it:
 ```sh
 vagrant up
 ```
-
-After starting up, install the guest additions:
-1. Navigate to Devices -> Insert Guest Additions CD image
-2. Open Konsole, and run the following commands:
-
-```sh
-sudo apt update
-sudo apt install build-essential dkms linux-headers-$(uname -r)
-sudo mkdir -p /mnt/cdrom
-sudo mount /dev/cdrom /mnt/cdrom
-cd /mnt/cdrom
-sudo sh ./VBoxLinuxAdditions.run
-sudo shutdown -r now
-```
-
-After rebooting, verify the additions are running:
-```sh
-lsmod | grep vboxguest
-```
-
-You should see output like the following:
-```sh
-vboxguest             348160  5 vboxsf
-```
-
-Now you should be able to set resolution and such as you want!
-
-## TODOs
-* Guest Additions?
